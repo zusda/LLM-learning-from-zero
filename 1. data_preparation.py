@@ -138,9 +138,9 @@ class GSM8K_SFT_Dataset:
 
 # ---------- 使用示例 ----------
 # train_dataset = GSM8K_SFT_Dataset(split="train", max_samples=1000,sft_cache_path='sft_train.jsonl')
-train_dataset = GSM8K_SFT_Dataset(split="test", max_samples=1000,sft_cache_path='sft_train.jsonl')
-print(len(train_dataset))
-print(train_dataset[2])
+# train_dataset = GSM8K_SFT_Dataset(split="test", max_samples=1000,sft_cache_path='sft_train.jsonl')
+# print(len(train_dataset))
+# print(train_dataset[2])
 
 # # 如果后续要接trl的SFTTrainer，转一下格式
 # train_hf = train_dataset.to_hf_dataset()
@@ -281,6 +281,11 @@ class GSM8K_RL_Dataset:
         return self.data[idx]
 
 
+# ---------- 使用示例 ----------
+# from transformers import AutoTokenizer
+# tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-1.5B-Instruct",)
+# train_rl = GSM8K_RL_Dataset(split="train", max_samples=1000, tokenizer=tokenizer)
+# print(train_rl[0])
 
 
 
